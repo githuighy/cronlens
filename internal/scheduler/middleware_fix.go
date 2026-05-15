@@ -1,6 +1,6 @@
 package scheduler
 
-import "fmt"
+import "context"
 
-// ensure fmt is used by middleware.go via this file to keep imports clean.
-var _ = fmt.Sprintf
+// JobFunc is the canonical job signature used throughout the scheduler package.
+type JobFunc func(ctx context.Context) error
